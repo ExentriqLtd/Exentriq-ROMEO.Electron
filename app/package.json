@@ -1,8 +1,8 @@
 {
-  "name": "rocketchat",
-  "productName": "Rocket.Chat",
+  "name": "exentriqtalk",
+  "productName": "Exentriq Talk",
   "identifier": "chat.rocket",
-  "description": "Rocket.Chat Native Cross-Platform Desktop Application via Electron.",
+  "description": "Exentriq Talk Native Cross-Platform Desktop Application.",
   "version": "0.0.8",
   "author": "Rocket.Chat Support <support@rocket.chat>",
   "main": "main.js",

@@ -10,7 +10,7 @@ var windowStateKeeper = require('./vendor/electron_boilerplate/window_state');
 var tray = require('./tray');
 
 // global variable
-var APP_NAME = 'Rocket.Chat';
+var APP_NAME = 'Exentriq Talk';
 //var INDEX = 'https://demo.rocket.chat';
 var INDEX = 'file://' + path.join(__dirname, 'app.html');
 

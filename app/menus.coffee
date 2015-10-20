@@ -4,7 +4,7 @@ remote = require 'remote'
 Menu = remote.require 'menu'
 app = remote.require 'app'
 path = remote.require 'path'
-APP_NAME = 'Rocket.Chat'
+APP_NAME = 'Exentriq Talk'
 
 if process.platform is 'darwin'
 	template = [
@@ -14,19 +14,6 @@ if process.platform is 'darwin'
 				{
 					label: 'About ' + APP_NAME
 					selector: 'orderFrontStandardAboutPanel:'
-				}
-				{
-					type: 'separator'
-				}
-				{
-					label: 'Change server'
-					click: ->
-						document.querySelector('.rocket-app').style.display = 'none'
-						document.querySelector('.landing-page').style.display = 'block'
-						activeItem = document.querySelector('.server-list li.active')
-						localStorage.removeItem('rocket.chat.currentHost')
-						if activeItem
-							activeItem.classList.remove('active')
 				}
 				{
 					type: 'separator'
@@ -101,11 +88,6 @@ if process.platform is 'darwin'
 					accelerator: 'CmdOrCtrl+R'
 					click: -> remote.getCurrentWindow().reload()
 				}
-				{
-					label: 'Toggle DevTools'
-					accelerator: 'CmdOrCtrl+Alt+I'
-					click: -> remote.getCurrentWindow().toggleDevTools()
-				}
 			]
 		}
 		{
@@ -137,16 +119,6 @@ else
 			label: APP_NAME
 			submenu: [
 				{
-					label: 'Change server'
-					click: ->
-						document.querySelector('.rocket-app').style.display = 'none'
-						document.querySelector('.landing-page').style.display = 'block'
-						activeItem = document.querySelector('.server-list li.active')
-						localStorage.removeItem('rocket.chat.currentHost')
-						if activeItem
-							activeItem.classList.remove('active')
-				}
-				{
 					label: 'Quit'
 					accelerator: 'CmdOrCtrl+Q'
 					click: -> app.quit()
@@ -160,11 +132,6 @@ else
 					label: 'Reload'
 					accelerator: 'CmdOrCtrl+R'
 					click: -> remote.getCurrentWindow().reload()
-				}
-				{
-					label: 'Toggle DevTools'
-					accelerator: 'CmdOrCtrl+Alt+I'
-					click: -> remote.getCurrentWindow().toggleDevTools()
 				}
 			]
 		}
