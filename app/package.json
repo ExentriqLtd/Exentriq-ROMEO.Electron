@@ -3,12 +3,9 @@
   "productName": "Exentriq Talk",
   "identifier": "chat.rocket",
   "description": "Exentriq Talk Native Cross-Platform Desktop Application.",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "author": "Rocket.Chat Support <support@rocket.chat>",
-  "main": "main.js",
-  "config": {
-    "target": "development"
-  },
+  "main": "background.js",
   "dependencies": {
     "fs-jetpack": "^0.7.0"
   }

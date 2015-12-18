@@ -1,4 +1,5 @@
-(function() {
+
+export var start = function() {
     var key = 'rocket.chat.hosts',
         rocketHeader = 'X-Rocket-Chat-Version'.toLowerCase(),
         defaultInstance = 'http://talk.stage.exentriq.com/';
@@ -45,4 +46,4 @@
             return window.open.apply(this, arguments);
         }
     };
-})();
+}
