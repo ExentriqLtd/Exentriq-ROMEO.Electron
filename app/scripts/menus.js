@@ -1,8 +1,8 @@
 'use strict';
 
 import { remote } from 'electron';
-import { servers } from './servers';
-import { sidebar } from './sidebar';
+// import { servers } from './servers';
+// import { sidebar } from './sidebar';
 import { webview } from './webview';
 import webFrame from 'web-frame';
 import '../branding/branding.js';
@@ -162,15 +162,6 @@ if (process.platform === 'darwin') {
 					type: 'separator'
 				},
 				{
-					label: 'Toggle server list',
-					click: function() {
-						sidebar.toggle();
-					}
-				},
-				{
-					type: 'separator'
-				},
-				{
 					label: 'Clear',
 					submenu: [
 						{
@@ -207,15 +198,6 @@ if (process.platform === 'darwin') {
 					visible: false
 				},
 				{
-					label: 'Add new server',
-					accelerator: 'Command+N',
-					click: function() {
-						var mainWindow = remote.getCurrentWindow();
-						mainWindow.show();
-						servers.clearActive();
-					}
-				},
-				{
 					type: 'separator'
 				},
 				{
@@ -227,27 +209,27 @@ if (process.platform === 'darwin') {
 				}
 			]
 		},
-		{
-			label: 'Help',
-			role: 'help',
-			submenu: [
-				{
-					label: APP_NAME + ' Help',
-					click: function() {
-						remote.shell.openExternal('https://rocket.chat/docs');
-					}
-				},
-				{
-					type: 'separator'
-				},
-				{
-					label: 'Learn More',
-					click: function() {
-						remote.shell.openExternal('https://rocket.chat');
-					}
-				}
-			]
-		}
+		// {
+		// 	label: 'Help',
+		// 	role: 'help',
+		// 	submenu: [
+		// 		{
+		// 			label: APP_NAME + ' Help',
+		// 			click: function() {
+		// 				remote.shell.openExternal('https://rocket.chat/docs');
+		// 			}
+		// 		},
+		// 		{
+		// 			type: 'separator'
+		// 		},
+		// 		{
+		// 			label: 'Learn More',
+		// 			click: function() {
+		// 				remote.shell.openExternal('https://rocket.chat');
+		// 			}
+		// 		}
+		// 	]
+		// }
 	];
 } else {
 	template = [
@@ -408,21 +390,6 @@ if (process.platform === 'darwin') {
 			label: '&Window',
 			id: 'window',
 			submenu: [
-				{
-					type: 'separator',
-					id: 'server-list-separator',
-					visible: false
-				},
-				{
-					label: 'Add new server',
-					accelerator: 'Ctrl+N',
-					click: function() {
-						servers.clearActive();
-					}
-				},
-				{
-					type: 'separator'
-				},
 				{
 					label: 'Close',
 					accelerator: 'Ctrl+W',
