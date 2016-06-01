@@ -321,29 +321,29 @@ if (process.platform === 'darwin') {
 				{
 					type: 'separator'
 				},
-				{
-					label: 'Current Server - Reload',
-					accelerator: 'Ctrl+R',
-					click: function() {
-						const activeWebview = webview.getActive();
-						if (activeWebview) {
-							activeWebview.reload();
-						}
-					}
-				},
-				{
-					label: 'Current Server - Toggle DevTools',
-					accelerator: 'Ctrl+Shift+I',
-					click: function() {
-						const activeWebview = webview.getActive();
-						if (activeWebview) {
-							activeWebview.openDevTools();
-						}
-					}
-				},
-				{
-					type: 'separator'
-				},
+				// {
+				// 	label: 'Current Server - Reload',
+				// 	accelerator: 'Ctrl+R',
+				// 	click: function() {
+				// 		const activeWebview = webview.getActive();
+				// 		if (activeWebview) {
+				// 			activeWebview.reload();
+				// 		}
+				// 	}
+				// },
+				// {
+				// 	label: 'Current Server - Toggle DevTools',
+				// 	accelerator: 'Ctrl+Shift+I',
+				// 	click: function() {
+				// 		const activeWebview = webview.getActive();
+				// 		if (activeWebview) {
+				// 			activeWebview.openDevTools();
+				// 		}
+				// 	}
+				// },
+				// {
+				// 	type: 'separator'
+				// },
 				{
 					label: 'Application - Reload',
 					accelerator: 'Ctrl+Shift+R',
@@ -355,21 +355,12 @@ if (process.platform === 'darwin') {
 						mainWindow.reload();
 					}
 				},
-				{
-					label: 'Application - Toggle DevTools',
-					click: function() {
-						remote.getCurrentWindow().toggleDevTools();
-					}
-				},
-				{
-					type: 'separator'
-				},
-				{
-					label: 'Toggle server list',
-					click: function() {
-						sidebar.toggle();
-					}
-				},
+				// {
+				// 	label: 'Application - Toggle DevTools',
+				// 	click: function() {
+				// 		remote.getCurrentWindow().toggleDevTools();
+				// 	}
+				// },
 				{
 					type: 'separator'
 				},

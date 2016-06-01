@@ -18,8 +18,7 @@ var icons = {
     },
 
     'darwin': {
-        dir: 'osx',
-        icon: 'icon-trayTemplate.png'
+        dir: 'osx'
     }
 };
 

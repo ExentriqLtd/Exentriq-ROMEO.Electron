@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-
+import { setBadge } from './start.js'
 class WebView extends EventEmitter {
 	constructor() {
 		super();
@@ -20,6 +20,19 @@ class WebView extends EventEmitter {
 
 		webviewObj.addEventListener('console-message', function(e) {
 			console.log('webview:', e.message);
+		});
+
+		webviewObj.addEventListener('ipc-message', (event) => {
+			this.emit('ipc-message-'+event.channel, host.url, event.args);
+
+			switch (event.channel) {
+				case 'title-changed':
+					document.title = event.args[0];
+					break;
+				case 'unread-changed':
+					setBadge(event.args[0]);
+					break;
+			}
 		});
 
 		webviewObj.addEventListener('dom-ready', () => {
