@@ -9,14 +9,14 @@ import './menus';
 
 export var setBadge = function (badge) {
     if (process.platform === 'darwin') {
-        remote.app.dock.setBadge(badge);
+        remote.app.dock.setBadge(badge.toString());
     }
-    tray.showTrayAlert(!isNaN(parseInt(badge)) && badge > 0, badge);
+    tray.showTrayAlert(!isNaN(parseInt(badge)) && badge > 0, badge.toString());
 };
 
 
 export var start = function() {
-    var defaultInstance = 'http://192.168.1.224:3000';
+    var defaultInstance = 'http://talk.stage.exentriq.com:5001';
     console.log('adding', defaultInstance);
     webview.add({url:defaultInstance});
     webview.setActive(defaultInstance);

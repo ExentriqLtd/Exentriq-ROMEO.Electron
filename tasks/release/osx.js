@@ -152,8 +152,7 @@ var packToDmgFile = function () {
     dmgManifest = utils.replace(dmgManifest, {
         productName: manifest.productName,
         appPath: finalAppDir.path(),
-        dmgIcon: projectDir.path('app/images/osx/dmg-icon.icns'),
-        dmgBackground: projectDir.path('app/images/osx/dmg-background.png')
+        dmgIcon: projectDir.path('app/images/osx/dmg-icon.icns')
     });
     tmpDir.write('appdmg.json', dmgManifest);
 
