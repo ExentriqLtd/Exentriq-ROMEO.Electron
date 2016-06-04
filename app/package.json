@@ -3,7 +3,7 @@
   "productName": "Exentriq Talk",
   "identifier": "exentriq-talk",
   "description": "Exentriq Talk Native Cross-Platform Desktop Application via Electron.",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "build": "15",
   "author": "Exentriq Ltd. support@exentriq.com",
   "copyright": "",
