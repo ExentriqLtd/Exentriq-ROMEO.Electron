@@ -20,7 +20,6 @@
 !define version "{{version}}"
 !define icon "{{icon}}"
 !define setupIcon "{{setupIcon}}"
-!define banner "{{banner}}"
 
 !define exec "{{productName}}.exe"
 
@@ -70,8 +69,6 @@ Page custom finish finishEnd
 ;    Control variables
 ;   --------------------------------
 
-Var Image
-Var ImageHandle
 
 Var LaunchAppCheckbox
 Var LaunchAppCheckbox_State
@@ -81,11 +78,6 @@ Var LaunchAppCheckbox_State
 ;   --------------------------------
 
 Function .onInit
-
-    ; Extract banner image for welcome page
-    InitPluginsDir
-    ReserveFile "${banner}"
-    File /oname=$PLUGINSDIR\banner.bmp "${banner}"
     
     ; Check if the application is currently running, show message if it is
     retryInstallation:
@@ -105,15 +97,10 @@ Function welcome
 
     nsDialogs::Create 1018
 
-    ${NSD_CreateLabel} 185 1u 210 100% "Welcome to ${productName} version ${version} installer.$\r$\n$\r$\nClick next to continue."
-
-    ${NSD_CreateBitmap} 0 0 170 210 ""
-    Pop $Image
-    ${NSD_SetImage} $Image $PLUGINSDIR\banner.bmp $ImageHandle
+    ${NSD_CreateLabel} 0 1u 210 100% "Welcome to ${productName} version ${version} installer.$\r$\n$\r$\nClick next to continue."
 
     nsDialogs::Show
 
-    ${NSD_FreeImage} $ImageHandle
 
 FunctionEnd
 
@@ -175,19 +162,13 @@ Function finish
 
     nsDialogs::Create 1018
 
-    ${NSD_CreateLabel} 185 1u 210 30u "${productName} installation successfully finished."
+    ${NSD_CreateLabel} 0 1u 210 30u "${productName} installation successfully finished."
 
-    ${NSD_CreateCheckbox} 185 35u 100% 10u "Launch ${productName}"
+    ${NSD_CreateCheckbox} 0 35u 100% 10u "Launch ${productName}"
     Pop $LaunchAppCheckbox
     ${NSD_SetState} $LaunchAppCheckbox ${BST_CHECKED}
 
-    ${NSD_CreateBitmap} 0 0 170 210 ""
-    Pop $Image
-    ${NSD_SetImage} $Image $PLUGINSDIR\banner.bmp $ImageHandle
-
     nsDialogs::Show
-
-    ${NSD_FreeImage} $ImageHandle
 
 FunctionEnd
 

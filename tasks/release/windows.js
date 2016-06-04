@@ -86,7 +86,6 @@ var createInstaller = function () {
         dest: releasesDir.path(finalPackageName),
         icon: readyAppDir.path('icon.ico'),
         setupIcon: projectDir.path('app/images/windows/setup-icon.ico'),
-        banner: projectDir.path('app/images/windows/setup-banner.bmp'),
     });
     tmpDir.write('installer.nsi', installScript);
 
