@@ -6,6 +6,7 @@ import { remote, ipcRenderer } from 'electron';
 import { webview } from './webview';
 import tray from './tray';
 import './menus';
+import installExtension from 'electron-devtools-installer';
 
 export var setBadge = function (badge) {
     if (process.platform === 'darwin') {
@@ -16,7 +17,14 @@ export var setBadge = function (badge) {
 
 
 export var start = function() {
-    var defaultInstance = 'https://talk.exentriq.com';
+    installExtension('mkaenpdiljjlapjnnnkdihfmmdpheddo')
+      .then(function (name) {
+          console.log('Added Extension:  '+ name)
+      })
+      .catch(function (err) {
+          console.log('An error occurred: ', err)
+      });
+    var defaultInstance = 'https://talk-stage.exentriq.com';
     console.log('adding', defaultInstance);
     webview.add({url:defaultInstance});
     webview.setActive(defaultInstance);
