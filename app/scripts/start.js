@@ -17,7 +17,7 @@ export var setBadge = function (badge) {
 
 
 export var start = function() {
-    var defaultInstance = 'https://talk-stage.vesely.in';
+    var defaultInstance = 'https://talk-stage.exentriq.com';
     console.log('adding', defaultInstance);
     webview.add({url:defaultInstance});
     webview.setActive(defaultInstance);
