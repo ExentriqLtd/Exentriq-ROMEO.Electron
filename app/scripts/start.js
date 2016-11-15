@@ -17,14 +17,7 @@ export var setBadge = function (badge) {
 
 
 export var start = function() {
-    installExtension('mkaenpdiljjlapjnnnkdihfmmdpheddo')
-      .then(function (name) {
-          console.log('Added Extension:  '+ name)
-      })
-      .catch(function (err) {
-          console.log('An error occurred: ', err)
-      });
-    var defaultInstance = 'https://talk-stage.exentriq.com';
+    var defaultInstance = 'https://talk-stage.vesely.in';
     console.log('adding', defaultInstance);
     webview.add({url:defaultInstance});
     webview.setActive(defaultInstance);
