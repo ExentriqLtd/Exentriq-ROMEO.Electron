@@ -6,7 +6,6 @@ import { remote, ipcRenderer } from 'electron';
 import { webview } from './webview';
 import tray from './tray';
 import './menus';
-import installExtension from 'electron-devtools-installer';
 
 export var setBadge = function (badge) {
     if (process.platform === 'darwin') {
