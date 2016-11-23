@@ -2,6 +2,7 @@
 'use strict';
 
 var IPC = require('electron').ipcRenderer;
+var desktopCapturer = require('electron').desktopCapturer;
 
 class Notification extends window.Notification {
 	get onclick() {
@@ -18,6 +19,8 @@ class Notification extends window.Notification {
 }
 
 window.Notification = Notification;
+window.isElectron = true;
+window.desktopCapturer = desktopCapturer;
 
 var events = ['unread-changed'];
 
