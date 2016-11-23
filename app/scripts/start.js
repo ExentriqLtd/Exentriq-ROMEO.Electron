@@ -16,7 +16,7 @@ export var setBadge = function (badge) {
 
 
 export var start = function() {
-    var defaultInstance = 'https://talk-stage.exentriq.com';
+    var defaultInstance = 'https://talk.exentriq.com';
     console.log('adding', defaultInstance);
     webview.add({url:defaultInstance});
     webview.setActive(defaultInstance);
