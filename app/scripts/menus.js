@@ -1,10 +1,9 @@
 'use strict';
 
-import { remote } from 'electron';
+import { remote, webFrame } from 'electron';
 // import { servers } from './servers';
 // import { sidebar } from './sidebar';
 import { webview } from './webview';
-import webFrame from 'web-frame';
 import '../branding/branding.js';
 
 var Menu = remote.Menu;

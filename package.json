@@ -1,7 +1,7 @@
 {
   "devDependencies": {
     "asar": "^0.10.0",
-    "electron-prebuilt": "0.36.10",
+    "electron": "1.8.6",
     "fs-jetpack": "^0.7.0",
     "gulp": "^3.9.0",
     "gulp-less": "^3.0.3",
@@ -12,7 +12,7 @@
     "yargs": "^4.2.0"
   },
   "dependencies": {
-    "electron-devtools-installer":"^2.0.1"
+    "electron-devtools-installer": "^2.0.1"
   },
   "optionalDependencies": {
     "appdmg": "^0.4.2",

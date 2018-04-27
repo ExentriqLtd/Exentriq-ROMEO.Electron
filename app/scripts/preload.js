@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
 	});
 });
 
-var shell = require('shell');
+var shell = require('electron').shell;
 
 var supportExternalLinks = function(e) {
 	var href;
@@ -71,12 +71,11 @@ var supportExternalLinks = function(e) {
 
 document.addEventListener('click', supportExternalLinks, false);
 
-var webFrame = require('web-frame');
-var remote = require('remote');
+var webFrame = require('electron').webFrame;
+var remote = require('electron').remote;
 var webContents = remote.getCurrentWebContents();
-var Menu = remote.require('menu');
-var menu = new Menu();
-
+var Menu = require('electron').menu;
+var menu;
 var path = remote.require('path');
 
 // set the initial context menu so that a context menu exists even before spellcheck is called
