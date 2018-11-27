@@ -147,12 +147,8 @@ npm run release -- --sign DX85ENM22A
 ```
 
 #### Mac App Store
-You should install the Electron build for MAS
-```
-export npm_config_platform=mas
-rm -rf node_modules
-npm install
-```
+Create/Download `Mac App Distribution` and `Mac Installer Distribution` certificates
+
 
 To sign your app for Mac App Store
 ```shell
@@ -177,6 +173,8 @@ If you insert your indentities in the package.json you can compile for MAS like
 ```
 npm run release -- --mas
 ```
+
+Upload to apple store by using Application Loader
 
 ## Windows only
 
