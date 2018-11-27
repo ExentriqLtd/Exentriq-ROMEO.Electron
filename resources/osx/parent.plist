@@ -16,5 +16,7 @@
     <true/>
     <key>com.apple.security.network.server</key>
     <true/>
+    <key>com.apple.security.application-groups</key>
+    <string>G2W8M47U3E.com.exentriq.apptalk</string>
   </dict>
 </plist>

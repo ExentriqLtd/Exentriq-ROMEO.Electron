@@ -36,5 +36,9 @@
 	<string>{{copyright}}</string>
 	<key>LSApplicationCategoryType</key>
 	<string>{{LSApplicationCategoryType}}</string>
+	<key>ElectronTeamID</key>
+	<string>G2W8M47U3E</string>
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
 </dict>
 </plist>
